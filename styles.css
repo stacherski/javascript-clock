@@ -1,0 +1,133 @@
+*, *::after, *::before{
+    padding: 0;
+    margin: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock {
+    width: 400px;
+    height: 400px;
+    display: block;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: rgba(255,255,255,0.8);
+    position: relative;
+}
+
+.clock::after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: #000;
+    border-radius: 10px;
+    position: absolute;
+    display: block;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    z-index: 11;
+}
+
+.number {
+    --rotation: 0;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    position: absolute;
+    font-size: 2em;
+    font-weight: 700;
+    transform: rotate(calc(var(--rotation) * 1deg));
+}
+
+.number1 {
+    --rotation: 30;
+}
+
+.number2 {
+    --rotation: 60;
+}
+
+.number3 {
+    --rotation: 90;
+}
+
+.number4 {
+    --rotation: 120;
+}
+
+.number5 {
+    --rotation: 150;
+}
+
+.number6 {
+    --rotation: 180;
+}
+
+.number7 {
+    --rotation: 210;
+}
+
+.number8 {
+    --rotation: 240;
+}
+
+.number9 {
+    --rotation: 270;
+}
+
+.number10 {
+    --rotation: 300;
+}
+
+.number11 {
+    --rotation: 330;
+}
+
+.hand {
+    --rotation: 270;
+    position: absolute;
+    width: 5px;
+    height: 50%;
+    bottom: 50%;
+    background: #000;
+    border-radius: 5px 5px 0 0;
+    border: 1px solid #fff;
+    left: 50%;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+    /* transition: all 1s linear; */
+    z-index: 10;
+}
+
+.hand.seconds {
+    background: red;
+    width: 3px;
+    height: 40%;
+}
+
+.hand.minutes {
+    background: #000;
+    width: 7px;
+    height: 40%;
+}
+
+.hand.hours {
+    background: #000;
+    width: 11px;
+    height: 35%;
+}
+
